@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">TradingView Alerts to MT5 Integration Architecture</text>
+  
+  <!-- TradingView -->
+  <rect x="50" y="100" width="160" height="80" rx="10" ry="10" fill="#3c4c5c" stroke="#2c3c4c" stroke-width="2" />
+  <text x="130" y="145" font-family="Arial" font-size="18" fill="white" text-anchor="middle">TradingView</text>
+  <text x="130" y="170" font-family="Arial" font-size="12" fill="#d0d0d0" text-anchor="middle">Alerts and Strategies</text>
+  
+  <!-- Internet Cloud -->
+  <ellipse cx="300" cy="200" rx="80" ry="50" fill="#e1e8f0" stroke="#c0d0e0" stroke-width="2" />
+  <text x="300" y="205" font-family="Arial" font-size="16" text-anchor="middle">Internet</text>
+  
+  <!-- Ngrok -->
+  <rect x="420" y="180" width="120" height="60" rx="8" ry="8" fill="#1F1E37" stroke="#0E0E1A" stroke-width="2" />
+  <text x="480" y="217" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Ngrok Tunnel</text>
+  
+  <!-- User's Local Machine -->
+  <rect x="400" y="270" width="360" height="200" rx="10" ry="10" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="2" />
+  <text x="580" y="295" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">User's Local Machine</text>
+  
+  <!-- Flask Server -->
+  <rect x="430" y="320" width="140" height="80" rx="5" ry="5" fill="#5d9cec" stroke="#4a89dc" stroke-width="2" />
+  <text x="500" y="355" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Flask Server</text>
+  <text x="500" y="375" font-family="Arial" font-size="12" fill="#e0e0ff" text-anchor="middle">Webhook Endpoint</text>
+  
+  <!-- MT5 Handler -->
+  <rect x="600" y="320" width="140" height="80" rx="5" ry="5" fill="#a0d468" stroke="#8cc152" stroke-width="2" />
+  <text x="670" y="355" font-family="Arial" font-size="16" fill="white" text-anchor="middle">MT5 Handler</text>
+  <text x="670" y="375" font-family="Arial" font-size="12" fill="#f0ffe0" text-anchor="middle">Trade Execution</text>
+  
+  <!-- MT5 Terminal -->
+  <rect x="480" y="420" width="200" height="30" rx="5" ry="5" fill="#967adc" stroke="#8067b7" stroke-width="2" />
+  <text x="580" y="440" font-family="Arial" font-size="14" fill="white" text-anchor="middle">MetaTrader 5 Terminal</text>
+  
+  <!-- Arrows -->
+  <!-- TradingView to Internet -->
+  <path d="M210 140 L250 175" fill="none" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="230" y="145" font-family="Arial" font-size="12" text-anchor="middle">Webhook</text>
+  
+  <!-- Internet to Ngrok -->
+  <path d="M370 190 L420 200" fill="none" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="395" y="185" font-family="Arial" font-size="12" text-anchor="middle">HTTP</text>
+  
+  <!-- Ngrok to Flask -->
+  <path d="M480 240 L500 320" fill="none" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="465" y="270" font-family="Arial" font-size="12" text-anchor="middle">Forward</text>
+  
+  <!-- Flask to MT5 Handler -->
+  <path d="M570 360 L600 360" fill="none" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="585" y="350" font-family="Arial" font-size="12" text-anchor="middle">API</text>
+  
+  <!-- MT5 Handler to MT5 Terminal -->
+  <path d="M670 400 L580 420" fill="none" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="640" y="410" font-family="Arial" font-size="12" text-anchor="middle">Python API</text>
+  
+  <!-- Arrowhead Marker Definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Legend - Made wider to fit text -->
+  <rect x="50" y="380" width="280" height="120" rx="5" ry="5" fill="white" stroke="#d0d0d0" stroke-width="1" />
+  <text x="190" y="400" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Data Flow</text>
+  <text x="190" y="430" font-family="Arial" font-size="12" text-anchor="middle">1. TradingView generates alert</text>
+  <text x="190" y="450" font-family="Arial" font-size="12" text-anchor="middle">2. Alert sent as webhook to Ngrok URL</text>
+  <text x="190" y="470" font-family="Arial" font-size="12" text-anchor="middle">3. Flask server processes webhook</text>
+  <text x="190" y="490" font-family="Arial" font-size="12" text-anchor="middle">4. MT5 Handler executes trade</text>
+</svg>
