@@ -20,6 +20,7 @@ This project enables automated trading by connecting TradingView alerts to MetaT
 - MetaTrader 5 platform installed
 - TradingView account (Pro or Premium for webhook alerts)
 - Ngrok account (free tier is sufficient) for creating the webhook tunnel https://ngrok.com/
+- Postman for troubleshooting and API testing (optional)
 
 ## Project Structure
 
@@ -222,12 +223,10 @@ MT5_DEFAULT_SUFFIX=.r
 
 The project includes a Postman collection for testing all API endpoints. This is helpful for debugging and validating the functionality without using TradingView.
 
-### Postman Setup
+### Postman Setup for Troubleshooting and Testing
 
-1. Find the collection in the `postman` folder
-2. Import it into Postman
-3. Create an environment with a `baseUrl` variable pointing to your Ngrok URL
-4. Follow the instructions in `postman/README.md` for detailed testing steps
+Follow the instructions in [Postman README](postman/README.md) for detailed testing steps
+and documentation on all endpoints
 
 This allows you to:
 
@@ -236,8 +235,6 @@ This allows you to:
 - View and manage positions
 - Search for available symbols
 - Verify webhook functionality
-
-For complete documentation on all endpoints and testing procedures, see the [Postman README](postman/README.md).
 
 ## Production Considerations
 

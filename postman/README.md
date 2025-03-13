@@ -7,12 +7,13 @@ This folder contains a Postman collection for testing the TradingView to MT5 Int
 ### 1. Import the Collection
 
 - Open Postman
-- Click "Import" > "File" > select `tradingview-alerts-to-metatrader5.postman_collection.json`
+- Click "Import" > "File" > select `api.postman_collection.json`
+- Click "Import" > "File" > select `local.postman_environment.json`
 
 ### 2. Configure the Environment
 
 - Create a new environment in Postman
-- Add a variable `baseUrl` with the value of your Ngrok URL (e.g., `https://xxxx.ngrok-free.app`)
+- Add a variable `ngrokUrl` with the value of your Ngrok URL (e.g., `https://xxxx.ngrok-free.app`) - this is the base URL from the `webhook_url.txt` file
 - Select this environment in the environment dropdown
 
 ### 3. Run Requests

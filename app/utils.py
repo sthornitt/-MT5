@@ -36,17 +36,20 @@ def setup_logging(name, log_to_file=True):
     
     return logger
 
-def save_webhook_url(url):
-    """
-    Save webhook URL to a file for reference
-    
-    Args:
-        url (str): Webhook URL
-    """
-    with open("webhook_url.txt", "w") as f:
-        f.write(url)
-    
-    print(f"Webhook URL saved to webhook_url.txt: {url}")
+
+def save_webhook_url(webhook_url):
+    base_url = webhook_url.rsplit('/', 1)[0]
+    with open('webhook_url.txt', 'w') as f:
+        f.write('base URL (optional: only needed if you are testing with Postman - `ngrokUrl` environment variable)\n')
+        f.write('===============\n')
+        f.write(base_url + '\n')
+        f.write('\n')
+        f.write('\n')
+        f.write('paste this URL in TradingView alerts Webhook URL section\n')
+        f.write('===============\n')
+        f.write(webhook_url + '\n')
+    print('Webhook URL saved to webhook_url.txt')
+    return
 
 def parse_tradingview_webhook(data):
     """

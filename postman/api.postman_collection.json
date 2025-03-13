@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "b3755993-d711-4025-a8ba-316d0f679f79",
+		"name": "tradingview-alerts-to-metatrader5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2146032"
+	},
+	"item": [
+		{
+			"name": "root",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ngrok-skip-browser-warning",
+						"value": " true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{ngrokUrl}}",
+					"host": [
+						"{{ngrokUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ngrok-skip-browser-warning",
+						"value": " true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{ngrokUrl}}/health",
+					"host": [
+						"{{ngrokUrl}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allSymbols",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ngrok-skip-browser-warning",
+						"value": " true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ngrokUrl}}/symbols",
+					"host": [
+						"{{ngrokUrl}}"
+					],
+					"path": [
+						"symbols"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "symbol",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ngrok-skip-browser-warning",
+						"value": " true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ngrokUrl}}/symbols?q=EUR",
+					"host": [
+						"{{ngrokUrl}}"
+					],
+					"path": [
+						"symbols"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "EUR"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "trade",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "ngrok-skip-browser-warning",
+						"value": " true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"symbol\": \"EURUSD\",\r\n    \"side\": \"SELL\",\r\n    \"volume\": 0.05\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ngrokUrl}}/trade",
+					"host": [
+						"{{ngrokUrl}}"
+					],
+					"path": [
+						"trade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "positions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ngrok-skip-browser-warning",
+						"value": " true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{ngrokUrl}}/positions",
+					"host": [
+						"{{ngrokUrl}}"
+					],
+					"path": [
+						"positions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
